@@ -6,31 +6,195 @@
     <title>MPK.solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            background-color: #0a0e3f;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
-            font-family: 'Passion One', sans-serif;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
-            font-size: 9em; 
-            font-weight: 800;
-            background: linear-gradient(45deg, #2196F3, #ff00ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin: 0;
+        body {
+            background: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.025) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 45%),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.015) 0%, transparent 35%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(10px, -10px) rotate(1deg);
+            }
+            66% {
+                transform: translate(-5px, 5px) rotate(-1deg);
+            }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 520px;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .message {
+            font-size: 1.125rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            border-top: 1px solid #2a2a2a;
+            padding-top: 2rem;
+        }
+
+        .contact-text {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+        }
+
+        .email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .email:hover {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            transform: translateY(-1px);
+        }
+
+        .email-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>MPK.solutions</h1>
+    <div class="container">
+        <div class="logo">MPK.solutions</div>
+        
+        <div class="status">
+            <div class="status-dot"></div>
+            In development
+        </div>
+        
+        <div class="message">
+            Building something new
+        </div>
+        
+        <div class="description">
+            Check back soon or get in touch if you'd like to work together.
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-text">
+                Have a project in mind?
+            </div>
+            <a href="mailto:hello@mpk.solutions" class="email">
+                <svg class="email-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                hello@mpk.solutions
+            </a>
+        </div>
+    </div>
 </body>
 </html>
