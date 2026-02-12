@@ -60,7 +60,78 @@
         .tagline {
             font-size: 1.125rem;
             color: #a0a0a0;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            text-align: left;
+            background: #111111;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .description p {
+            font-size: 0.9375rem;
+            color: #c0c0c0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+
+        .feature-list li {
+            font-size: 0.9375rem;
+            color: #c0c0c0;
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.25rem;
+            color: #606060;
+            font-weight: 600;
+        }
+
+        .section-label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-section {
+            text-align: left;
+            background: #111111;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .data-section p {
+            font-size: 0.9375rem;
+            color: #c0c0c0;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .data-section p:last-child {
+            margin-bottom: 0;
         }
 
         .links {
@@ -68,7 +139,7 @@
             flex-direction: column;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .link {
@@ -154,6 +225,11 @@
             .tagline {
                 font-size: 1rem;
             }
+
+            .description,
+            .data-section {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
@@ -162,6 +238,30 @@
         <img src="/clockwork/app-icon.png" alt="Clockwork App Icon" class="app-icon">
 
         <div class="logo">Clockwork - Time Tracker</div>
+        <div class="tagline">Simple, focused time tracking for your work and projects</div>
+
+        <div class="description">
+            <div class="section-label">What Clockwork Does</div>
+            <p>Track your time, manage projects, and create professional invoices — all in one app. Clockwork is built for freelancers and consultants who want a fast, focused way to track billable hours and get paid. No account required. No subscription.</p>
+            <ul class="feature-list">
+                <li>One-tap timer with pause and resume, or log time manually</li>
+                <li>Organize entries with tags, projects, and clients</li>
+                <li>Set hourly rates and hour budgets per project</li>
+                <li>Turn tracked time into polished PDF invoices with 5 templates</li>
+                <li>Track invoice status from draft to sent to paid</li>
+                <li>Send time entries to Airtable, Google Sheets, or Notion</li>
+                <li>Export to CSV for use with any spreadsheet app</li>
+                <li>Home Screen widgets, Live Activities, Dynamic Island, and Siri Shortcuts</li>
+                <li>iCloud sync keeps your data backed up and safe</li>
+            </ul>
+        </div>
+
+        <div class="data-section">
+            <div class="section-label">How Your Data Is Used</div>
+            <p>Clockwork optionally connects to <strong>Google Sheets</strong> so you can send your time entries directly to your spreadsheets. When you enable this integration, Clockwork requests access to your Google account solely to write time entry data to the spreadsheet you select. No other Google data is read or stored.</p>
+            <p>Clockwork collects <strong>crash and diagnostic data</strong> through Sentry to identify bugs and improve app stability. This data does not include personal information and is not used for advertising, marketing, or tracking.</p>
+            <p>Your time tracking data lives on your device and is optionally synced via <strong>Apple iCloud (CloudKit)</strong>, managed entirely by Apple. No account is needed to use Clockwork.</p>
+        </div>
 
         <div class="links">
             <a href="/clockwork-privacy/" class="link">
